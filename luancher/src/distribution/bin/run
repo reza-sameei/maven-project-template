@@ -1,0 +1,20 @@
+#! /bin/bash
+
+echo "Java home : $JAVA_HOME"
+
+BASEDIR=$(dirname "$0")
+# echo "$BASEDIR"
+PRJDIR=$(dirname "$BASEDIR")
+PRJDIR=$(cd $PRJDIR; pwd)
+echo "Project directory: $PRJDIR"
+
+CP="$PRJDIR/conf"
+echo $CP
+for file in `ls $PRJDIR/libs`; do I=$PRJDIR/libs/$file; CP="$CP:$I"; echo $I; done
+
+# echo $CP
+
+MAIN_CLASS=com.github.reza_sameei.maven_project_template.launcher.Launcher
+echo "Main class : $MAIN_CLASS"
+
+$JAVA_HOME/bin/java -cp $CP $MAIN_CLASS $PRJDIR/conf/application.conf

@@ -1,0 +1,38 @@
+[
+  {
+    "Identity": "last_logs",
+    "Struct": {
+      "objectType": "struct",
+      "name": "last_logs",
+      "appearance": "ExactlyOnce",
+      "expr": "/OpenClinica:AuditLogs",
+      "subs": {},
+      "vals": {
+        "EventTime": {
+          "objectType": "field",
+          "name": "EventTime",
+          "appearance": "AtMostOnce",
+          "valueType": "DATETIME",
+          "expr": "NONE"
+        },
+        "TargetGroup": {
+          "objectType": "field",
+          "name": "TargetGroup",
+          "appearance": "AtMostOnce",
+          "valueType": "STRING",
+          "expr": "NONE"
+        },
+        "Id": {
+          "objectType": "field",
+          "name": "Id",
+          "appearance": "ExactlyOnce",
+          "valueType": "STRING",
+          "expr": "/OpenClinica:AuditLogs/@SomeAttr"
+        }
+      }
+    },
+    "MatchCriteria": {
+      "TAG_NAME": "OpenClinical:AuditLogs"
+    }
+  }
+]

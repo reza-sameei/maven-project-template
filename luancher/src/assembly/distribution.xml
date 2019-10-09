@@ -1,0 +1,93 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0
+          http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+
+    <id>dist</id>
+
+    <formats>
+        <format>tar.gz</format>
+        <format>dir</format>
+    </formats>
+
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <moduleSets>
+        <moduleSet>
+
+            <!-- Enable access to all projects in the current multimodule build! -->
+            <useAllReactorProjects>true</useAllReactorProjects>
+
+            <!-- Now, select which projects to include in this module-set. -->
+            <includes>
+                <include>com.github.reza_sameei:maven_project_template</include>
+            </includes>
+
+            <binaries>
+
+                <!--outputDirectory>modules/maven-assembly-plugin</outputDirectory>
+                <unpack>false</unpack-->
+
+            </binaries>
+
+        </moduleSet>
+    </moduleSets>
+
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/libs</outputDirectory>
+        </dependencySet>
+    </dependencySets>
+
+    <fileSets>
+        <fileSet>
+            <directory>src/distribution</directory>
+            <outputDirectory>/</outputDirectory>
+            <filtered>true</filtered>
+            <excludes>
+                <exclude>bin</exclude>
+                <exclude>bin/.gitignore</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
+
+    <files>
+        <!--file>
+            <source>src/distribution/bin/protocol-json-cli</source>
+            <outputDirectory>bin</outputDirectory>
+            <fileMode>777</fileMode>
+            <filtered>false</filtered>
+        </file-->
+        <file>
+            <source>src/distribution/bin/run</source>
+            <outputDirectory>bin</outputDirectory>
+            <fileMode>777</fileMode>
+            <filtered>true</filtered>
+        </file>
+    </files>
+
+
+    <!--files>
+        <file>
+            <source>src/distribution/README.txt</source>
+            <outputDirectory>/</outputDirectory>
+            <filtered>true</filtered>
+        </file>
+        <file>
+            <source>src/distribution/LICENSE.txt</source>
+            <outputDirectory>/</outputDirectory>
+            <filtered>true</filtered>
+        </file>
+        <file>
+            <source>src/distribution/bin/run</source>
+            <outputDirectory>bin</outputDirectory>
+            <filtered>true</filtered>
+        </file>
+        <file>
+            <source>src/distribution/conf/</source>
+            <outputDirectory>bin</outputDirectory>
+            <filtered>true</filtered>
+        </file>
+    </files-->
+
+</assembly>

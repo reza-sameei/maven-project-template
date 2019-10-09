@@ -1,0 +1,4 @@
+README.txt
+OS NAME : ${os.name}
+OS VERSION : ${os.version}
+${release.message}

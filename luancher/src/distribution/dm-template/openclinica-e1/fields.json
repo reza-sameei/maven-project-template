@@ -1,0 +1,53 @@
+[{
+  "DataType":"DATETIME",
+  "Appearance": "AtMostOnce",
+  "OID":"EventTime",
+  "Name":"Event Time",
+  "Expression":"/StudyEventData/OpenClinica:AuditLogs/OpenClinica:AuditLog[TB:datetimeParse(@DateTimeStamp)=max(../OpenClinica:AuditLog/TB:datetimeParse(@DateTimeStamp))]/TB:datetimeParse(@DateTimeStamp)",
+  "MatchingCriteria":{
+    "Study":"*",
+    "MDV":"*",
+    "StudyEventOID":"*",
+    "FormOID":null,
+    "ItemGroupOID":null
+  }
+},{
+  "DataType":"STRING",
+  "Appearance": "ExactlyOnce",
+  "OID":"Id",
+  "Name":"Unique Identity",
+  "Expression":"(/StudyEventData)/concat(@TB:StudyOID, '/', @TB:MetaDataVersionOID, '/', @TB:SubjectKey, '/', @StudyEventOID)",
+  "MatchingCriteria":{
+    "Study":"*",
+    "MDV":"*",
+    "StudyEventOID":"*",
+    "FormOID":null,
+    "ItemGroupOID":null
+  }
+},{
+  "DataType":"STRING",
+  "Appearance": "AtMostOnce",
+  "OID":"TargetGroup",
+  "Name":"Target Group",
+  "Expression":"/StudyEventData/@TB:SubjectKey",
+  "MatchingCriteria":{
+    "Study":"*",
+    "MDV":"*",
+    "StudyEventOID":"*",
+    "FormOID":null,
+    "ItemGroupOID":null
+  }
+},{
+  "DataType":"STRING",
+  "Appearance": "AtLeastOnce",
+  "OID":"OPS",
+  "Name":"Target Group",
+  "Expression":"/NoTag/@Attr",
+  "MatchingCriteria":{
+    "Study":"*",
+    "MDV":"*",
+    "StudyEventOID":"*",
+    "FormOID":"NEVER_MATCH",
+    "ItemGroupOID":null
+  }
+}]

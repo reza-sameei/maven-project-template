@@ -1,0 +1,29 @@
+[
+  {
+    "Study": "S_THEJUNOD",
+    "MDV": "v1.0.0",
+    "StudyEventOID": "SE_INITIALVISIT",
+    "Criteria": {
+      "EXTRACTED_ID": "SE_INITIALVISIT",
+      "TAG_NAME": "StudyEventData"
+    }
+  },
+  {
+    "Study": "S_THEJUNOD",
+    "MDV": "v1.0.0",
+    "StudyEventOID": "SE_EOSORLFW",
+    "Criteria": {
+      "EXTRACTED_ID": "SE_EOSORLFW",
+      "TAG_NAME": "StudyEventData"
+    }
+  },
+  {
+    "Study": "S_THEJUNOD",
+    "MDV": "v1.0.0",
+    "StudyEventOID": "SE_LOGS",
+    "Criteria": {
+      "EXTRACTED_ID": "SE_LOGS",
+      "TAG_NAME": "StudyEventData"
+    }
+  }
+]
